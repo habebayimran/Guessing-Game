@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <br>
+        <h1>$ GUESS AND WIN $</h1>
+        <h3>
+            RULES: <br>
+            Guess the Number from 1-10<br>
+            If the guessed number is correct; U win the lottery<br>
+            Else Ur score will be decreased!
+        </h3>
+        <input id="number">
+        <br>
+        <br>
+        <button onclick="guess()">GUESS</button>
+        <br>
+        <p id="answer">YOUR ANSWER: </p>
+        <p id="score">Score: 10</p>
+        <script>
+            var number=document.getElementById("number")
+            var answer=document.getElementById("answer")
+            var randomnum=Math.floor(Math.random()*10)+1
+            var score=document.getElementById("score")
+            var totalscore=10
+            function guess(){
+                var usernum=number.value
+                if(randomnum==usernum){
+                    answer.textContent="You Are Right!"
+                    console.log("right")
+                    alert("YOU WON THE LOTTERY")
+                }
+                else{
+                    answer.textContent="Wrong! Please Try Again"
+                    console.log("wrong")
+                    totalscore=totalscore-1
+                    score.textContent="Score: "+totalscore
+                }
+            }
+        </script>
+    </body>
+</html>
